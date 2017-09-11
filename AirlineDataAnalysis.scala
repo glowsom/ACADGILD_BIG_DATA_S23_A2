@@ -57,6 +57,7 @@ object AirlineDataAnalysis extends App {
                               .map(x => ((x(17)+","+x(18)),1))
                               .reduceByKey(_+_)
                               .map(x => (x._2,x._1))
-                              .sortByKey(false).map(x => (x._2,x._1))
+                              .sortByKey(false)
+                              .map(x => (x._2,x._1))
                               .take(10).foreach(println)
 }
